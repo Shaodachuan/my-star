@@ -17,9 +17,11 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
   },
+  //设置打包的方式
   // cheap-module-eval-source-map is faster for development
   devtool: config.dev.devtool,
 
+  //开发时候的服务器
   // these devServer options should be customized in /config/index.js
   devServer: {
     clientLogLevel: 'warning',
@@ -44,6 +46,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       poll: config.dev.poll,
     }
   },
+  //插件
   plugins: [
     new webpack.DefinePlugin({
       'process.env': require('../config/dev.env')
@@ -52,11 +55,13 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
+    //HTML生成压缩
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
       inject: true
     }),
+    //静态资源拷贝
     // copy custom static assets
     new CopyWebpackPlugin([
       {
@@ -68,6 +73,8 @@ const devWebpackConfig = merge(baseWebpackConfig, {
   ]
 })
 
+
+//定义一个Promise对象
 module.exports = new Promise((resolve, reject) => {
   portfinder.basePort = process.env.PORT || config.dev.port
   portfinder.getPort((err, port) => {
