@@ -1,0 +1,25 @@
+@import './variables-base.scss';
+//IMG
+.img-v-middle{
+    vertical-align: middle;
+}
+
+//tong yong kuan du
+
+//inline-block
+.inb{
+    display: inline-block;
+}
+
+//title common
+@mixin title-common-mixin($m1: 0,$m2: 0,$m3: 0,$m4: 0){
+    margin: $m1 $m2 $m3 $m4;
+    color: $grayDark;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.title-active{
+    color: $blue !important;
+}
+

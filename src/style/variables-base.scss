@@ -1,0 +1,71 @@
+/* Author: Kodoku
+   Date: 2019-03-28
+*/
+
+// 不同颜色的灰度 gray
+// -------------------------
+$black:                 #000;
+$grayDark:              #333;
+$grayLight:             #999;
+$grayLighter:           #eff3f5;
+$white:                 #fff;
+
+
+// 三种主要颜色
+// -------------------------
+$blue:                  #007aff;
+$green:                 #23a621;
+$red:                   #d7373a;
+
+
+// Scaffolding  背景色 和前景色
+// -------------------------
+$bodyBackground:        $grayLighter;
+$blockBackground:       $white;
+$textColor:             $black;
+
+
+// Links  链接颜色
+// -------------------------
+$linkColor:             $black;
+$linkHoverColor:        $blue;
+
+//统一的图片相对
+$imgPath:              '../../img/';
+
+
+
+
+// Typography  
+// -------------------------
+$sansFontFamily:        'PingFang SC,Monospaced Number,Chinese Quote,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif';
+
+$baseFontSize:          14px;
+$baseFontFamily:        $sansFontFamily;
+
+$baseLineHeight:        1.5;
+
+$headingsFontFamily:    inherit; // empty to use BS default, @baseFontFamily
+$headingsFontWeight:    bold;    // instead of browser default, bold
+$headingsColor:         inherit; // empty to use BS default, @textColor
+
+// Iconography
+// -------------------------
+
+$iconFontPath:          "../fonts/";
+
+
+// padding  length
+$width-0: 0px;
+$width-1: 5px;
+$width-2: 2 * $width-1;
+$width-3: 3 * $width-1;
+$width-4: 4 * $width-1;
+$width-5: 5 * $width-1;
+
+//percent
+$percent-100: 100%;
+
+
+
+
