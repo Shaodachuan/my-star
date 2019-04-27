@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import currency from '@/page/currency/currency'
+import myGrade from '@/page/grade/grade'
 
 Vue.use(Router)
 
@@ -9,13 +9,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'myGrade',
+      component: myGrade
     },
     {
-      path: '/currency',
-      name: 'HelloWorld1',
-      component: currency
+      path: '/grade',
+      name: 'myGrade',
+      component: myGrade
     }
   ]
 })

@@ -10,8 +10,14 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "chart.js": "^2.8.0",
+    "echarts": "^4.2.1",
     "element-ui": "^2.6.3",
+    "iview": "^3.4.1",
+    "v-charts": "^1.19.0",
     "vue": "^2.5.2",
+    "vue-chartkick": "^0.5.0",
+    "vue-echarts": "^4.0.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.1.0"
   },
@@ -20,6 +26,7 @@
     "babel-core": "^6.22.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^7.1.1",
+    "babel-plugin-component": "^1.1.1",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-runtime": "^6.22.0",
     "babel-plugin-transform-vue-jsx": "^3.5.0",
