@@ -1,0 +1,63 @@
+
+
+@import './variables.scss';
+
+//字体形状
+.my_f_f_b {
+    font-family: $v_f_f_b;
+}
+
+
+//大小
+.my_fs24 {
+    font-size: $v_fz_24;
+}
+
+.my_fs16 {
+    font-size: $v_fz_16;
+}
+
+//粗细
+.my_fwb {
+    font-weight: bold;
+}
+
+//位置
+.my_tac{
+    text-align: center;
+}
+
+//inline-block
+.my_inb{
+    display: inline-block;
+}
+
+
+
+//设置通用padding   top
+.my_pb0{
+    padding-bottom: 0px;
+}
+.my_pt10{
+    padding-top: $v_ps_10;
+}
+.my_pb10{
+    padding-bottom: $v_ps_10;
+}
+.my_pt20{
+    padding-top: $v_ps_20;
+}
+.my_pb20{
+    padding-bottom: $v_ps_20;
+}
+.my_pt30{
+    padding-top: $v_ps_30;
+}
+.my_pb30{
+    padding-bottom: $v_ps_30;
+}
+
+//设置通用margin
+.my_mt20{
+    margin-top: $v_ms_20;
+}

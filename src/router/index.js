@@ -16,6 +16,11 @@ export default new Router({
       path: '/grade',
       name: 'myGrade',
       component: myGrade
+    },
+    {
+      path: '/platform',
+      name: 'myGrade',
+      component: myGrade
     }
   ]
 })

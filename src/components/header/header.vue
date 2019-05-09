@@ -10,9 +10,9 @@
         <MenuItem name="1" to="/grade">
             评级
         </MenuItem>
-          <MenuItem name="2">
-              Item 2
-          </MenuItem>
+        <MenuItem name="2">
+            平台
+        </MenuItem>
           <MenuItem name="3">
               Item 3
           </MenuItem>
