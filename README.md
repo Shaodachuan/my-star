@@ -19,4 +19,4 @@ npm run build --report
 ```
 
 # description
-v1.0.0-release  平台信息完成
+v1.0.0-release  平台信息完成 
