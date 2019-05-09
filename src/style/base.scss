@@ -27,6 +27,18 @@
     text-align: center;
 }
 
+.my_tal{
+    text-align: left;
+}
+
+.my_vam{
+    vertical-align: middle;
+}
+
+.my_vat{
+    vertical-align: top;
+}
+
 //inline-block
 .my_inb{
     display: inline-block;
@@ -44,6 +56,12 @@
 .my_pb10{
     padding-bottom: $v_ps_10;
 }
+.my_pr10{
+    padding-bottom: $v_ps_20;
+}
+.my_pl10{
+    padding-left: $v_ps_20;
+}
 .my_pt20{
     padding-top: $v_ps_20;
 }
@@ -58,6 +76,16 @@
 }
 
 //设置通用margin
+.my_mr7{
+    margin-right: $v_ms_7;
+}
+.my_ml7{
+    margin-left: $v_ms_7;
+}
 .my_mt20{
     margin-top: $v_ms_20;
 }
+
+
+
+//设置vertical-align

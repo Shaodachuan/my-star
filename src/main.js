@@ -10,10 +10,7 @@ import VCharts from 'v-charts'
 import VueChartkick from 'vue-chartkick'
 import Chart from 'chart.js'
 import ECharts from 'vue-echarts'
-
-
-
-Vue.config.productionTip = false
+import echarts from 'echarts'
 
 
 //使用iView组件
@@ -25,6 +22,8 @@ Vue.component(TableColumn.name, TableColumn);
 Vue.use(VCharts);
 Vue.use(VueChartkick, {adapter: Chart})
 Vue.component('e-chart', ECharts)
+Vue.prototype.$echarts = echarts
+
 
 /* eslint-disable no-new */
 new Vue({
@@ -33,3 +32,6 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+
+

@@ -10,16 +10,15 @@
         <MenuItem name="1" to="/grade">
             评级
         </MenuItem>
-        <MenuItem name="2">
+        <MenuItem name="2"  to="/platform">
             平台
         </MenuItem>
-          <MenuItem name="3">
-              Item 3
+          <MenuItem name="3"  to="/platnews">
+              资讯公告
           </MenuItem>
-          <MenuItem name="4">
-              Item 4
+          <MenuItem name="4"  to="/platweibo">
+             微博推特
           </MenuItem>
- 
       </Menu>
     </Header>
 

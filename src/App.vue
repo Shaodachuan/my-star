@@ -1,5 +1,5 @@
 <template>
-  <div id="app layout">
+  <div id="layout">
     <Layout>
           <!-- header -->
             <my-header />
@@ -14,11 +14,14 @@
 
                 <!-- right -->
                   <Col span="5"> 
-                    <Card>
-                      <div style="min-height: 800px;">
-                          8
-                      </div>
-                    </Card>
+                  <div style="overflow:hidden">
+                    <img src="https://cdn.mytoken.org/web-index-ch.jpg" height="160px;">
+                  </div>
+                  <Card style="margin-top:20px;">
+                    <div style="min-height: 800px;">
+                        
+                    </div>
+                  </Card>
                   </Col>
                 <!-- right --> 
               </Row>
@@ -54,7 +57,7 @@ export default {
 <style lang="scss">
 @import './style/base.scss';
 @import './style/variables.scss';
-
+//设置字体
 body{
   font-family:  $v_f_f_b;
 }
@@ -67,13 +70,10 @@ body{
     overflow: hidden;
 }
 
+//设置中间
 .my-content{
-  margin: 20px 0;
+  margin: 35px 0;
   padding: 0 50px;
-}
-
-.my-m-4{
-  margin-top: 20px;
 }
 </style>
 
