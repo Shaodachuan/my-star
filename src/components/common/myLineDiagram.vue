@@ -92,7 +92,7 @@ export default {
   margin-top: 10px;
   font-size: 13px;
   color: #515a6e;
-  font-weight: normal;
+  font-weight: blod;
 }
 
 .my-line-unit{

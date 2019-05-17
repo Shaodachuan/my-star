@@ -1,7 +1,7 @@
 <template>
   <Col span="12" offset="3">
         <!-- bottom -->
-          <Card :bordered="false" class="my_mt20 my_pt10">
+          <Card :bordered="false" class="my_pt10">
             <Menu mode="horizontal" active-name="1">
                 <MenuItem name="flash" to="/flash">
                     快讯

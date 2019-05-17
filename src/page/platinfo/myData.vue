@@ -96,23 +96,23 @@ export default {
         columns: [
           "名称",
           "成交量",
-          "投资人数",
-          "平均借款期限",
+          "投资人",
+          "借款期",
           "参考收益率",
-          "待还余额",
-          "净资金流入",
-          "成交量"
+          "待还",
+          "流入",
+          "成交量a"
         ],
         rows: [
           {
             名称: "1/1",
             成交量: 0,
-            投资人数: 0,
-            平均借款期限: 0,
+            投资人: 0,
+            借款期: 0,
             参考收益率: 0,
-            待还余额: 0,
-            净资金流入: 0,
-            成交量: 0
+            待还: 0,
+            流入: 0,
+            成交量a: 0
           }
         ]
       }
@@ -123,25 +123,20 @@ export default {
     // data
     var that = this;
     var url = "http://localhost:8083/plat-api/v1/plat/"+this.$route.query.id + "/detail";
-    console.log(url);
      axios
       .get(url)
       .then(function(response) {
         let data = response.data;
-        console.log(data);
         //设置运营平台数据
         that.detail = data;
         // //设置图表数据
-        // that.chartData.rows[0].名称 = data.name;
-        // that.chartData.rows[0].成交 = data.volumeTurnover;
-        // that.chartData.rows[0].合规 = data.averageBorrowingPeriod;
-        // that.chartData.rows[0].人气 = data.outstandingBalance;
-        // that.chartData.rows[0].技术 = data.referenceRateOfReturn;
-        // that.chartData.rows[0].杠杆 = data.numberOfInvestors;
-        // that.chartData.rows[0].流动 = data.perLoanAmount;
-        // that.chartData.rows[0].透明 = data.waitForInvestment;
-        // that.chartData.rows[0].分散 = data.borrowersNumber;
-        // that.chartData.rows[0].品牌 = data.perInvestmentAmount;
+        that.chartData.rows[0].名称 = data.name;
+        that.chartData.rows[0].成交量 = data.volumeTurnover;
+        that.chartData.rows[0].投资人 = data.numberOfInvestors;
+        that.chartData.rows[0].借款期 = data.averageBorrowingPeriod;
+        that.chartData.rows[0].参考收益率 = data.referenceRateOfReturn;
+        that.chartData.rows[0].待还 = data.numberToRepaid;
+        // that.chartData.rows[0].成交量a = data.volumeTurnover;
       })
       .catch(function(error) {
         console.log(error);

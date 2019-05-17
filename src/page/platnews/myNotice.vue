@@ -9,42 +9,38 @@
           </p>
           <p class="my_notice_date">2019-04-24</p>
         </div>
-        <div class="my_notice_item">
-          <h3 class="my_notice_title">麻袋财富2018财报：营收超6亿 净利润1.23亿
-            <Tag color="primary" class="my_notice_tag" >平台公告</Tag>
-          </h3>
-          <p class="my_notice_content"> 
-            近日，上海P2P平台麻袋财富在中国互联网金融协会——全国互联网金融登记披露服务平台（简称“协会信披系统”）上披露了2018年财报。财报显示，麻袋财富2018年营业收入（合并）为6.19亿元，同比... 查看全文
-          </p>
-          <p class="my_notice_date">2019-04-24</p>
-        </div>
-        <div class="my_notice_item">
-          <h3 class="my_notice_title">麻袋财富2018财报：营收超6亿 净利润1.23亿</h3>
-          <p class="my_notice_content"> 
-            近日，上海P2P平台麻袋财富在中国互联网金融协会——全国互联网金融登记披露服务平台（简称“协会信披系统”）上披露了2018年财报。财报显示，麻袋财富2018年营业收入（合并）为6.19亿元，同比... 查看全文
-          </p>
-          <p class="my_notice_date">2019-04-24</p>
-        </div>
-        <div class="my_notice_item">
-          <h3 class="my_notice_title">麻袋财富2018财报：营收超6亿 净利润1.23亿</h3>
-          <p class="my_notice_content"> 
-            近日，上海P2P平台麻袋财富在中国互联网金融协会——全国互联网金融登记披露服务平台（简称“协会信披系统”）上披露了2018年财报。财报显示，麻袋财富2018年营业收入（合并）为6.19亿元，同比... 查看全文
-          </p>
-          <p class="my_notice_date">2019-04-24</p>
-        </div>
-        <div class="my_notice_item">
-          <h3 class="my_notice_title">麻袋财富2018财报：营收超6亿 净利润1.23亿</h3>
-          <p class="my_notice_content"> 
-            近日，上海P2P平台麻袋财富在中国互联网金融协会——全国互联网金融登记披露服务平台（简称“协会信披系统”）上披露了2018年财报。财报显示，麻袋财富2018年营业收入（合并）为6.19亿元，同比... 查看全文
-          </p>
-          <p class="my_notice_date">2019-04-24</p>
-        </div>
+      
+        <template  v-for="item in noticeList">
+          <router-link :to="{name:'myNewsDetail',query:{id:item.id}}">
+            <div class="my_notice_item">
+              <h3 class="my_notice_title">{{item.title}}
+                <Tag color="primary" class="my_notice_tag" >{{item.tag}}</Tag>
+              </h3>
+              <p class="my_notice_content"> 
+                {{item.descp}}
+              </p>
+              <p class="my_notice_date">发布日期：{{item.date.substring(0,10)}}</p>
+            </div>
+          </router-link>
+        </template>
+     
+        
+
+         <el-pagination
+         class="my-page"
+          layout="prev, pager, next"
+          :page-count="pageInfo.count"
+          :page-size="pageInfo.pageNum"
+          @current-change = "pageChange"
+          :current-page="pageInfo.pageSize">
+         </el-pagination>
       </Col>
     </Row>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 import myPlatInfoDetail from '@/components/common/myPlatInfoDetail'
 export default {
   //名称
@@ -55,41 +51,45 @@ export default {
   },
   //数据
   data() {
-     this.chartSettings = {
-        roseType: 'radius'
-      }
     return {
-      
-      tableData: [{
-            date: '2016-05-02',
-            name: '刘小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
-          }, {
-            date: '2016-05-04',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1517 弄'
-          }, {
-            date: '2016-05-01',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1519 弄'
-          }, {
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄'
-          }],
-          //v-chart
-          chartData: {
-          columns: ['日期', '访问用户'],
-          rows: [
-            { '日期': '1/1', '访问用户': 1393 },
-            { '日期': '1/2', '访问用户': 3530 },
-            { '日期': '1/3', '访问用户': 2923 },
-            { '日期': '1/4', '访问用户': 1723 },
-            { '日期': '1/5', '访问用户': 3792 },
-            { '日期': '1/6', '访问用户': 4593 }
-          ]
-        }
+      //v-chart
+      noticeList: [],
+      //v-chart
+      pageInfo:{
+        count: 0,
+        pageNum: 1,
+        pageSize: 2
+      }
     }
+  },
+  //方法
+  methods: {
+    pageChange: function(event){
+      var that = this;
+      var url = "http://localhost:8083/post-api/v1/notice/page/"+ event +"/" + that.pageInfo.pageSize;
+      this.getData(that,url);
+    },
+    getData: function(that,url){
+      axios
+        .get(url)
+        .then(function(response) {
+          let data = response.data;
+          console.log(data)
+          //设置运营平台数据
+          that.pageInfo.count = parseInt(data.count/data.pageSize) + data.count%data.pageSize;
+          that.noticeList = data.dataList;
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
+  },
+  //生命周期
+  beforeMount: function(){
+    //数据获取
+    var that = this;
+    var url = "http://localhost:8083/post-api/v1/notice/page/"+ that.pageInfo.pageNum+"/" + that.pageInfo.pageSize;
+    this.getData(that,url);
   }
 };
 </script>
@@ -123,5 +123,9 @@ export default {
 .my_notice_tag{
   float: right;
   margin-right: 25px;
+}
+
+.my-page{
+  margin: 30px 20px 0px 20px;
 }
 </style>

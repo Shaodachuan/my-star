@@ -126,6 +126,7 @@ export default {
       .get(url)
       .then(function(response) {
         let data = response.data;
+        console.log(data);
         //设置运营平台数据
         that.level = data;
         //设置图表数据

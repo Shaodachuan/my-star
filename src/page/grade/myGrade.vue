@@ -22,15 +22,17 @@
     <!-- bottom -->
     <Card :bordered="false" class="my_mt20 my_pt10">
       <el-table
+        stripe
         :default-sort="{prop: 'date', order: 'descending'}"
         highlight-current-row
         :data="tableData"
         style="width: 100%"
+        size='small'
       >
         <el-table-column prop="ranking" label="排名" sortable></el-table-column>
         <el-table-column prop="name" label="平台" sortable>
            <template slot-scope="scope">
-           <router-link :to="{name:'myPlatInfo',query:{id:scope.row.name}}">{{scope.row.name}} </router-link>
+           <router-link :to="{name:'myArchives',query:{id:scope.row.name}}">{{scope.row.name}} </router-link>
           </template>
         </el-table-column>
         <el-table-column prop="developmentIndex" label="指数" sortable></el-table-column>
@@ -233,13 +235,12 @@ export default {
       .catch(function(error) {
         console.log(error);
       });
-      //获取数据 问题
+    //获取评级列表
     axios
       .get("http://localhost:8083/grade-api/v1/grade/list")
       .then(function(response) {
         let data = response.data;
         that.tableData = data;
-
       })
       .catch(function(error) {
         console.log(error);

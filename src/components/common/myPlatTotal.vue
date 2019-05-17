@@ -3,7 +3,7 @@
   <div>
      <!-- 图片 -->
       <div :style="[picStyle]" class="my_inb">
-        <img  src="../../images/EMOJI-44.png" :style="[pic1Style]" class="my_vam"/>
+        <img  :src="mySrc" :style="[pic1Style]" class="my_vam"/>
       </div>
       <!-- 文字 -->
       <div class="my_fs24 my_fwb my_tac my_inb" :style="textStyle">
@@ -43,7 +43,7 @@ export default {
       }]
     }
     return {
-      aa: "../../images/EMOJI-44.png",
+      aa: "https://upload-images.jianshu.io/upload_images/8941567-0987d79b51f4058c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/48/format/webp",
       //样式
       picStyle:{
         height: '70px',

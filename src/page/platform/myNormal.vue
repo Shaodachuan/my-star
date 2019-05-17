@@ -5,11 +5,12 @@
       highlight-current-row
       :data="tableData"
       style="width: 100%"
+      size='small'
     >
       <el-table-column label="序号" sortable type="index" width="50"></el-table-column>
       <el-table-column prop="name" label="平台" sortable>
         <template slot-scope="scope">
-          <a href="#">{{scope.row.name}}</a>
+          <router-link :to="{name:'myArchives',query:{id:scope.row.name}}">{{scope.row.name}} </router-link>
         </template>
       </el-table-column>
       <el-table-column prop="volume" label="成交量(万元)" sortable></el-table-column>

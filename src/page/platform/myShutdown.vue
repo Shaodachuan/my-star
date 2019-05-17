@@ -8,8 +8,8 @@
     >
       <el-table-column label="序号" sortable type="index" width="50"></el-table-column>
       <el-table-column prop="name" label="平台" sortable>
-        <template slot-scope="scope">
-          <a href="#">{{scope.row.name}}</a>
+         <template slot-scope="scope">
+          <router-link :to="{name:'myArchives',query:{id:scope.row.name}}">{{scope.row.name}} </router-link>
         </template>
       </el-table-column>
       <el-table-column prop="questionTime" label="问题时间" sortable></el-table-column>

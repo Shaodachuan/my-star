@@ -5,19 +5,19 @@
           <img src="../../images/logo.png" class="layout-logo">
         </router-link>
 
-        <MenuItem name="6" to="https://www.baidu.com">
+        <MenuItem name="6" to="">
         </MenuItem>
         <MenuItem name="1" to="/grade">
-            评级
+            <span class="my-h-title">评级</span>
         </MenuItem>
-        <MenuItem name="2"  to="/platform">
-            平台
+        <MenuItem name="2"  to="/normal">
+           <span class="my-h-title">平台</span>
         </MenuItem>
-          <MenuItem name="3"  to="/platnews">
-              资讯公告
+          <MenuItem name="3"  to="/flash">
+             <span class="my-h-title">资讯公告</span>
           </MenuItem>
           <MenuItem name="4"  to="/platweibo">
-             微博推特
+             <span class="my-h-title">微博推特</span>
           </MenuItem>
       </Menu>
     </Header>
@@ -66,5 +66,9 @@ export default {
   height: 50px;
 }
 
-
+.my-h-title{
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
 </style>

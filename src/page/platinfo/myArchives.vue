@@ -16,11 +16,11 @@
     </div>
      <div class="my-rec-item">
       <h3 class="my-rec-title">融资记录</h3>
-      <div class="my-rec-con">{{archives.financingRecord}}</div>
+      <div class="my-rec-con" v-html="archives.financingRecord"></div>
     </div>
      <div class="my-rec-item">
       <h3 class="my-rec-title">监管协会</h3>
-      <div class="my-rec-con">{{archives.regulatoryAssociation}}</div>
+      <div class="my-rec-con" v-html="archives.regulatoryAssociation"></div>
     </div>
      <div class="my-rec-item">
       <h3 class="my-rec-title">ICP经营许可证</h3>

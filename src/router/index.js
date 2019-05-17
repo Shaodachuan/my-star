@@ -13,6 +13,8 @@ import myPlatNews from '@/page/platnews/myPlatNews'
 import myFlash from '@/page/platnews/myFlash'
 import myInformation from '@/page/platnews/myInformation'
 import myNotice from '@/page/platnews/myNotice'
+import myNewsDetail from '@/page/platnews/myNewsDetail'
+import myInformationDetail from '@/page/platnews/myInformationDetail'
 import myPlatWeibo from '@/page/weibo/myPlatWeibo'
 import myNormal from '@/page/platform/myNormal'
 import myTransfer from '@/page/platform/myTransfer'
@@ -28,7 +30,7 @@ export default new Router({
       component: myGrade
     },
     {
-      path: '/',
+      path: '/grade',
       name: 'myGrade',
       component: myGrade
     },
@@ -60,11 +62,20 @@ export default new Router({
       name: 'myPlatNews',
       component: myPlatNews,
       children:[
-        {path:'/',component:myFlash},
-        {path:'/flash',component:myFlash},
-        {path:'/information',component:myInformation},
-        {path:'/notice',component:myNotice}
+        {path:'/flash',component:myFlash,name: 'myFlash'},
+        {path:'/information',component:myInformation,name: 'myInformation'},
+        {path:'/notice',component:myNotice,name: 'myNotice'}
       ]
+    },
+    {
+      path: '/news',
+      name: 'myNewsDetail',
+      component: myNewsDetail
+    },
+    {
+      path: '/news-infor',
+      name: 'myInformationDetail',
+      component: myInformationDetail
     },
     {
       path: '/platweibo',

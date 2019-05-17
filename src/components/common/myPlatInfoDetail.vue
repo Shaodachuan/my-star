@@ -4,7 +4,7 @@
     <row>
       <Col span="12" >
         <div class="my-pt-logo my_inb">
-          <img :src="platInfo.logo">
+          <img :src="platInfo.logo" style="max-width:160px;">
         </div>
         <Divider type="vertical" class="my-divider my_vat"/>
         <div class="my-pt-title my_inb my_tal my_pl10">
